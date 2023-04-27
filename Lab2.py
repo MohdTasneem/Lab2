@@ -5,8 +5,8 @@ def main():
     temp_list = get_user_input()
     print("Average = " + str(calc_average(temp_list)))
     print(find_min_max(temp_list))
-    sort_temperature(temp_list)
-    #calc_median_temperature(temp_list)
+    sorted_temp = sort_temperature(temp_list)
+    print("Median = " + str(calc_median_temperature(sorted_temp)))
 def display_main_menu():
     print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
 
@@ -33,9 +33,15 @@ def find_min_max(temp):
 def sort_temperature(temp):
     sorted_temp = sorted(temp)
     print(sorted_temp)
+    return sorted_temp
+def calc_median_temperature(sorted_temp):
+    middle = int(len(sorted_temp)/2)
 
-#def calc_median_temperature(temp):
-
+    if ((len(sorted_temp) % 2) == 0):
+        median = (sorted_temp[middle] + sorted_temp[middle-1]) / 2
+    else:
+        median = sorted_temp[middle]
+    return median
 
 if __name__ == "__main__":
     main()
