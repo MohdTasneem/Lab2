@@ -4,7 +4,7 @@ def main():
     display_main_menu()
     temp_list = get_user_input()
     print("Average = " + str(calc_average(temp_list)))
-    print(find_min_max(temp_list))
+    print("Min , Max = " + str(find_min_max(temp_list)))
     sorted_temp = sort_temperature(temp_list)
     print("Median = " + str(calc_median_temperature(sorted_temp)))
 def display_main_menu():
